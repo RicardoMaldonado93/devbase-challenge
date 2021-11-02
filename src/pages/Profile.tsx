@@ -33,7 +33,7 @@ export const Profile = () => {
           userData && ( <Card avatar_url={userData.avatar_url} name={userData.name} location={userData.location} /> )
         }
         {
-          toogle && ( <h4>Not found...</h4>  )
+          toogle && (  <h4 className="p-3 bold animate__animated animate__headShake">Not found...</h4>  )
         }
       </div>
     </div>
