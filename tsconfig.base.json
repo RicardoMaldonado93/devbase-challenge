@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "paths": {
+      "styles/*": ["./styles/*"],
+      "pages/*": ["./pages/*"],
+      "components/*": ["./components/*"],
+      "hooks/*": ["./hooks/*"],
+      "services/*": ["./services/*"],
+      "test/*": ["./test/*"]
+    }
+  }
+}
