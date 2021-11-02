@@ -7,7 +7,7 @@ import "styles/pages/Home.scss";
 export const Home = () => {
   const [users, setUsers] = useState<string[]>([]);
   const history = useHistory();
-  
+
   const redirectToViewProfile = (userName: string) => {
     history.push(`profile/${userName}`);
   };
