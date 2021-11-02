@@ -1,12 +1,16 @@
 import { Navbar } from "components/Navbar";
 import { useEffect } from "react";
 import { useState } from "react";
+import { useHistory } from "react-router-dom";
 import "styles/pages/Home.scss";
 
 export const Home = () => {
   const [users, setUsers] = useState<string[]>([]);
-
-  const redirectToViewProfile = (userName: string) => {};
+  const history = useHistory();
+  
+  const redirectToViewProfile = (userName: string) => {
+    history.push(`profile/${userName}`);
+  };
 
   useEffect(() => {
     setUsers(usernames);

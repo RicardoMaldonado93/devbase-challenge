@@ -4,6 +4,7 @@ import { IParamsProps } from "components/Router";
 import { UseToogle } from "hooks/UseToogle";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import { get } from "services/HttpService";
 
 const API = "https://api.github.com/users";
 
@@ -14,7 +15,7 @@ export const Profile = () => {
 
   const loadData = async () => {
     const recoverUserParam = params.username;
-    const data = ""
+    const data = await get<IUserDataProps>(`${API}/${recoverUserParam}`);
 
     data && setUserData(data);
     !data && onToogle();
