@@ -1,6 +1,7 @@
 import { Card } from "components/Card";
 import { Navbar } from "components/Navbar";
 import { IParamsProps } from "components/Router";
+import { Spinner } from "components/Spinner";
 import { UseToogle } from "hooks/UseToogle";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
@@ -11,6 +12,7 @@ const API = "https://api.github.com/users";
 export const Profile = () => {
   const params = useParams<IParamsProps>();
   const [userData, setUserData] = useState<IUserDataProps>();
+  const [loader, setLoader] = useState(false)
   const { onToogle, toogle } = UseToogle();
 
   const loadData = async () => {
@@ -19,10 +21,12 @@ export const Profile = () => {
 
     data && setUserData(data);
     !data && onToogle();
+    setLoader(false)
   };
 
   useEffect(() => {
-    loadData()
+    loadData();
+    setLoader(true)
   }, [])
   
   return (
@@ -34,6 +38,9 @@ export const Profile = () => {
         }
         {
           toogle && (  <h4 className="p-3 bold animate__animated animate__headShake">Not found...</h4>  )
+        }
+        {
+          loader && ( <Spinner /> )
         }
       </div>
     </div>
