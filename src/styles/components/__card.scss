@@ -1,0 +1,40 @@
+$text-size: 1.1rem;
+$secondary-text-color: #b4b4b4;
+
+.card-profile {
+  padding: 1rem 1.5rem 2rem;
+  //   padding: 1rem 4rem 2rem ;
+  .card__border {
+    border-bottom: 1px solid lighten($secondary-text-color, 15%);
+    padding: 1.5rem 0;
+  }
+  .card__avatar {
+    width: 4rem;
+    height: 4rem;
+  }
+  .card__name {
+    font-size: $text-size;
+    word-wrap: break-word;
+    font-weight: bold;
+  }
+  .card__location {
+    font-size: $text-size / 1.5;
+    color: $secondary-text-color;
+  }
+}
+
+@media (min-width: 576px) {
+  $text-size: 1.5rem;
+
+  .card-profile {
+    padding: 1rem 4rem 2rem;
+    .card__name {
+      font-size: $text-size;
+      font-weight: bold;
+    }
+    .card__location {
+      font-size: $text-size / 1.5;
+      color: $secondary-text-color;
+    }
+  }
+}
